@@ -125,8 +125,10 @@ jobs:
       
       - name: Check for known vulnerabilities
         run: |
-          pip list | grep -E "Django|DRF|requests" > requirements-check.txt
-          safety check --file requirements-check.txt || true
+          cd backend
+          pip install safety
+          pip install -r requirements.txt
+          safety check -r requirements.txt || true
   
   # ============================================================================
   # STAGE 3: DOCKER BUILD
