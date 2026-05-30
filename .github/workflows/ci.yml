@@ -4,10 +4,12 @@ on:
   push:
     branches:
       - main
+      - ci-test
       - develop
   pull_request:
     branches:
       - main
+      - ci-test
       - develop
 
 env:
@@ -59,7 +61,7 @@ jobs:
           DB_USER: postgres
           DB_PASSWORD: postgres
           DB_HOST: localhost
-          DB_PORT: 5432
+          DB_PORT: 6543
           DB_SSLMODE: disable
           DEBUG: 'False'
         run: |
@@ -86,18 +88,11 @@ jobs:
           DB_PASSWORD: postgres
           DB_HOST: localhost
           DB_PORT: 6543
+          DB_SSLMODE: disable
           DEBUG: 'False'
         run: |
           cd backend
-          pytest tests/ -v --cov=merchants --cov=analytics \
-            --cov-report=term-missing --cov-report=xml
-      
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
-        with:
-          files: ./backend/coverage.xml
-          flags: unittests
-          name: codecov-umbrella
+          pytest tests/ -v
   
   # ============================================================================
   # STAGE 2: SECURITY & LINTING
