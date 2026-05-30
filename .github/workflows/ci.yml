@@ -88,6 +88,7 @@ jobs:
           DB_PASSWORD: postgres
           DB_HOST: localhost
           DB_PORT: 6543
+          DB_SSLMODE: disable
           DEBUG: 'False'
         run: |
           cd backend
