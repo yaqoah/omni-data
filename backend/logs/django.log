@@ -19344,3 +19344,747 @@ WARNING 2026-05-29 15:16:31,809 metrics 31244 30752 [PERFORMANCE ALERT] Slow que
   DB Queries: 0
 WARNING 2026-05-29 15:16:31,811 log 31244 30752 Too Many Requests: /api/merchants/transactions/
 WARNING 2026-05-29 15:16:31,811 log 31244 30752 Too Many Requests: /api/merchants/transactions/
+INFO 2026-05-30 12:02:14,595 views 42680 4736 Export task submitted for merchant 42fdfd55-0f72-4b52-99a4-35a77be3e8c0
+INFO 2026-05-30 12:02:14,595 views 42680 4736 Export task submitted for merchant 42fdfd55-0f72-4b52-99a4-35a77be3e8c0
+WARNING 2026-05-30 12:02:14,598 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/analytics/export/
+  Duration: 343.28ms
+  Method: POST
+  Status: 202
+  DB Queries: 0
+WARNING 2026-05-30 12:02:14,598 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/analytics/export/
+  Duration: 343.28ms
+  Method: POST
+  Status: 202
+  DB Queries: 0
+INFO 2026-05-30 12:02:16,630 workers 42680 20500 Starting export task for merchant 6f7bd033-e1ed-42d6-8672-845e9e34147e
+INFO 2026-05-30 12:02:16,631 views 42680 4736 Export task submitted for merchant 6f7bd033-e1ed-42d6-8672-845e9e34147e
+INFO 2026-05-30 12:02:16,630 workers 42680 20500 Starting export task for merchant 6f7bd033-e1ed-42d6-8672-845e9e34147e
+INFO 2026-05-30 12:02:16,631 views 42680 4736 Export task submitted for merchant 6f7bd033-e1ed-42d6-8672-845e9e34147e
+INFO 2026-05-30 12:02:18,318 workers 42680 20500 Export complete: 0 rows for 6f7bd033-e1ed-42d6-8672-845e9e34147e
+INFO 2026-05-30 12:02:18,318 workers 42680 20500 Export complete: 0 rows for 6f7bd033-e1ed-42d6-8672-845e9e34147e
+INFO 2026-05-30 12:02:18,647 workers 42680 25056 Starting export task for merchant a549b0f2-66e6-4bd9-84ef-c8f5728b8cb7
+INFO 2026-05-30 12:02:18,647 views 42680 4736 Export task submitted for merchant a549b0f2-66e6-4bd9-84ef-c8f5728b8cb7
+INFO 2026-05-30 12:02:18,647 workers 42680 25056 Starting export task for merchant a549b0f2-66e6-4bd9-84ef-c8f5728b8cb7
+INFO 2026-05-30 12:02:18,647 views 42680 4736 Export task submitted for merchant a549b0f2-66e6-4bd9-84ef-c8f5728b8cb7
+ERROR 2026-05-30 12:02:20,330 workers 42680 25056 Export failed for a549b0f2-66e6-4bd9-84ef-c8f5728b8cb7: cursor "_django_curs_25056_sync_1" does not exist
+Traceback (most recent call last):
+  File "C:\Users\Balot\OneDrive\Coding-Python\omni-data\venv\lib\site-packages\django\db\utils.py", line 98, in inner
+    return func(*args, **kwargs)
+psycopg2.errors.InvalidCursorName: cursor "_django_curs_25056_sync_1" does not exist
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Balot\OneDrive\Coding-Python\omni-data\venv\lib\site-packages\django\db\models\sql\compiler.py", line 2112, in cursor_iter
+    for rows in iter((lambda: cursor.fetchmany(itersize)), sentinel):
+  File "C:\Users\Balot\OneDrive\Coding-Python\omni-data\venv\lib\site-packages\django\db\models\sql\compiler.py", line 2112, in <lambda>
+    for rows in iter((lambda: cursor.fetchmany(itersize)), sentinel):
+  File "C:\Users\Balot\OneDrive\Coding-Python\omni-data\venv\lib\site-packages\django\db\utils.py", line 97, in inner
+    with self:
+  File "C:\Users\Balot\OneDrive\Coding-Python\omni-data\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Balot\OneDrive\Coding-Python\omni-data\venv\lib\site-packages\django\db\utils.py", line 98, in inner
+    return func(*args, **kwargs)
+django.db.utils.OperationalError: cursor "_django_curs_25056_sync_1" does not exist
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Balot\OneDrive\Coding-Python\omni-data\backend\analytics\workers.py", line 75, in execute
+    for tx in transactions.iterator(chunk_size=1000):
+  File "C:\Users\Balot\OneDrive\Coding-Python\omni-data\venv\lib\site-packages\django\db\models\query.py", line 518, in _iterator
+    yield from iterable
+  File "C:\Users\Balot\OneDrive\Coding-Python\omni-data\venv\lib\site-packages\django\db\models\query.py", line 123, in __iter__
+    for row in compiler.results_iter(results):
+  File "C:\Users\Balot\OneDrive\Coding-Python\omni-data\venv\lib\site-packages\django\db\models\sql\compiler.py", line 2115, in cursor_iter
+    cursor.close()
+psycopg2.errors.InvalidCursorName: cursor "_django_curs_25056_sync_1" does not exist
+
+ERROR 2026-05-30 12:02:20,330 workers 42680 25056 Export failed for a549b0f2-66e6-4bd9-84ef-c8f5728b8cb7: cursor "_django_curs_25056_sync_1" does not exist
+Traceback (most recent call last):
+  File "C:\Users\Balot\OneDrive\Coding-Python\omni-data\venv\lib\site-packages\django\db\utils.py", line 98, in inner
+    return func(*args, **kwargs)
+psycopg2.errors.InvalidCursorName: cursor "_django_curs_25056_sync_1" does not exist
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Balot\OneDrive\Coding-Python\omni-data\venv\lib\site-packages\django\db\models\sql\compiler.py", line 2112, in cursor_iter
+    for rows in iter((lambda: cursor.fetchmany(itersize)), sentinel):
+  File "C:\Users\Balot\OneDrive\Coding-Python\omni-data\venv\lib\site-packages\django\db\models\sql\compiler.py", line 2112, in <lambda>
+    for rows in iter((lambda: cursor.fetchmany(itersize)), sentinel):
+  File "C:\Users\Balot\OneDrive\Coding-Python\omni-data\venv\lib\site-packages\django\db\utils.py", line 97, in inner
+    with self:
+  File "C:\Users\Balot\OneDrive\Coding-Python\omni-data\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Balot\OneDrive\Coding-Python\omni-data\venv\lib\site-packages\django\db\utils.py", line 98, in inner
+    return func(*args, **kwargs)
+django.db.utils.OperationalError: cursor "_django_curs_25056_sync_1" does not exist
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Balot\OneDrive\Coding-Python\omni-data\backend\analytics\workers.py", line 75, in execute
+    for tx in transactions.iterator(chunk_size=1000):
+  File "C:\Users\Balot\OneDrive\Coding-Python\omni-data\venv\lib\site-packages\django\db\models\query.py", line 518, in _iterator
+    yield from iterable
+  File "C:\Users\Balot\OneDrive\Coding-Python\omni-data\venv\lib\site-packages\django\db\models\query.py", line 123, in __iter__
+    for row in compiler.results_iter(results):
+  File "C:\Users\Balot\OneDrive\Coding-Python\omni-data\venv\lib\site-packages\django\db\models\sql\compiler.py", line 2115, in cursor_iter
+    cursor.close()
+psycopg2.errors.InvalidCursorName: cursor "_django_curs_25056_sync_1" does not exist
+
+WARNING 2026-05-30 12:02:21,377 views 42680 4736 Transaction detail access denied: No Transaction matches the given query.
+WARNING 2026-05-30 12:02:21,377 views 42680 4736 Transaction detail access denied: No Transaction matches the given query.
+WARNING 2026-05-30 12:02:21,378 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/b8233860-4ead-4f42-8beb-70225af0e712/
+  Duration: 367.83ms
+  Method: GET
+  Status: 404
+  DB Queries: 0
+WARNING 2026-05-30 12:02:21,378 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/b8233860-4ead-4f42-8beb-70225af0e712/
+  Duration: 367.83ms
+  Method: GET
+  Status: 404
+  DB Queries: 0
+WARNING 2026-05-30 12:02:21,378 log 42680 4736 Not Found: /api/merchants/transactions/b8233860-4ead-4f42-8beb-70225af0e712/
+WARNING 2026-05-30 12:02:21,378 log 42680 4736 Not Found: /api/merchants/transactions/b8233860-4ead-4f42-8beb-70225af0e712/
+WARNING 2026-05-30 12:02:24,207 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 988.12ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:24,207 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 988.12ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:25,301 log 42680 4736 Bad Request: /api/merchants/transactions/
+WARNING 2026-05-30 12:02:25,301 log 42680 4736 Bad Request: /api/merchants/transactions/
+WARNING 2026-05-30 12:02:26,243 log 42680 4736 Bad Request: /api/merchants/transactions/
+WARNING 2026-05-30 12:02:26,243 log 42680 4736 Bad Request: /api/merchants/transactions/
+WARNING 2026-05-30 12:02:29,380 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/analytics/summary/
+  Duration: 1110.13ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:29,380 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/analytics/summary/
+  Duration: 1110.13ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:30,482 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/analytics/summary/
+  Duration: 1100.76ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:30,482 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/analytics/summary/
+  Duration: 1100.76ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:31,950 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 366.93ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:31,950 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 366.93ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:32,350 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 398.85ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:32,350 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 398.85ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:32,733 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 381.28ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:32,733 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 381.28ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:33,107 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 371.93ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:33,107 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 371.93ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:33,482 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 374.04ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:33,482 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 374.04ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:33,852 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 367.91ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:33,852 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 367.91ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:34,220 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 366.02ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:34,220 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 366.02ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:34,584 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 364.54ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:34,584 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 364.54ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:34,959 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 372.72ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:34,959 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 372.72ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:35,332 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 372.32ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:35,332 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 372.32ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:35,700 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 366.06ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:35,700 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 366.06ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:36,067 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 367.03ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:36,067 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 367.03ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:36,435 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 366.29ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:36,435 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 366.29ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:36,811 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 374.22ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:36,811 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 374.22ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:37,178 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 365.84ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:37,178 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 365.84ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:37,570 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 389.98ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:37,570 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 389.98ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:37,939 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 367.83ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:37,939 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 367.83ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:38,306 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 366.60ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:38,306 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 366.60ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:38,679 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 370.15ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:38,679 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 370.15ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:39,055 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 375.12ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:39,055 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 375.12ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:39,428 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 371.36ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:39,428 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 371.36ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:39,798 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 369.59ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:39,798 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 369.59ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:40,167 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 367.64ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:40,167 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 367.64ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:40,543 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 374.09ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:40,543 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 374.09ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:40,920 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 375.13ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:40,920 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 375.13ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:41,295 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 372.15ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:41,295 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 372.15ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:41,663 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 367.37ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:41,663 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 367.37ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:42,033 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 367.88ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:42,033 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 367.88ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:42,403 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 368.36ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:42,403 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 368.36ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:42,778 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 373.33ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:42,778 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 373.33ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:43,149 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 370.82ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:43,149 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 370.82ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:43,521 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 369.74ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:43,521 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 369.74ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:43,895 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 372.62ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:43,895 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 372.62ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:44,265 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 368.42ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:44,265 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 368.42ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:44,639 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 373.17ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:44,639 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 373.17ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:45,006 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 366.09ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:45,006 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 366.09ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:45,383 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 375.43ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:45,383 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 375.43ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:45,766 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 381.12ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:45,766 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 381.12ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:46,136 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 369.32ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:46,136 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 369.32ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:46,508 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 370.10ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:46,508 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 370.10ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:46,875 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 366.09ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:46,875 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 366.09ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:47,248 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 371.48ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:47,248 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 371.48ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:47,619 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 370.75ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:47,619 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 370.75ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:47,992 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 371.44ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:47,992 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 371.44ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:48,359 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 365.64ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:48,359 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 365.64ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:48,730 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 369.80ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:48,730 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 369.80ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:49,100 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 367.58ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:49,100 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 367.58ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:49,467 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 366.95ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:49,467 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 366.95ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:49,834 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 365.42ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:49,834 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 365.42ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:50,202 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 366.90ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:50,202 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 366.90ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:50,590 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 386.47ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:50,590 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 386.47ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:50,970 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 378.45ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:50,970 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 378.45ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:51,342 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 370.38ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:51,342 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 370.38ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:51,711 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 368.19ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:51,711 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 368.19ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:52,079 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 365.23ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:52,079 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 365.23ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:52,449 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 369.36ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:52,449 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 369.36ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:52,823 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 371.93ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:52,823 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 371.93ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:53,191 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 367.62ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:53,191 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 367.62ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:53,560 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 367.13ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:53,560 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 367.13ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:53,931 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 370.42ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:53,931 metrics 42680 4736 [PERFORMANCE ALERT] Slow query detected on endpoint /api/merchants/transactions/
+  Duration: 370.42ms
+  Method: GET
+  Status: 200
+  DB Queries: 0
+WARNING 2026-05-30 12:02:53,934 log 42680 4736 Too Many Requests: /api/merchants/transactions/
+WARNING 2026-05-30 12:02:53,934 log 42680 4736 Too Many Requests: /api/merchants/transactions/
