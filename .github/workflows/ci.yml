@@ -36,7 +36,7 @@ jobs:
           --health-timeout 5s
           --health-retries 5
         ports:
-          - 5432:5432
+          - 6543:5432
     
     steps:
       - name: Checkout code
@@ -60,6 +60,7 @@ jobs:
           DB_PASSWORD: postgres
           DB_HOST: localhost
           DB_PORT: 5432
+          DB_SSLMODE: disable
           DEBUG: 'False'
         run: |
           cd backend
@@ -71,7 +72,8 @@ jobs:
           DB_USER: postgres
           DB_PASSWORD: postgres
           DB_HOST: localhost
-          DB_PORT: 5432
+          DB_PORT: 6543
+          DB_SSLMODE: disable
           DEBUG: 'False'
         run: |
           cd backend
@@ -83,7 +85,7 @@ jobs:
           DB_USER: postgres
           DB_PASSWORD: postgres
           DB_HOST: localhost
-          DB_PORT: 5432
+          DB_PORT: 6543
           DEBUG: 'False'
         run: |
           cd backend
