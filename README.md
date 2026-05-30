@@ -1,4 +1,4 @@
-# Omni-Data
+# 📜 Omni-Data
 
 A multi-tenant merchant analytics and transaction management platform for fintech applications.
 
