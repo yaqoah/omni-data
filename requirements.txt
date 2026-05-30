@@ -1,4 +1,0 @@
-Django==5.1.7
-djangorestframework==3.17.1
-pytest==9.0.3
-django-cors-headers
